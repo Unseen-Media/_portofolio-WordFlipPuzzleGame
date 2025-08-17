@@ -1,6 +1,6 @@
 {
   "name": "word-flip-puzzle",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A browser-based word puzzle game where players flip tiles to reveal letters under a countdown timer",
   "main": "index.js",
   "scripts": {
