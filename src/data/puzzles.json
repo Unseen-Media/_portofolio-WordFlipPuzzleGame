@@ -1,0 +1,94 @@
+{
+  "puzzles": [
+    {
+      "id": 1,
+      "word": "REACT",
+      "alternateAnswers": ["CRATE", "TRACE", "CATER"],
+      "hint": "A popular JavaScript library for building user interfaces",
+      "difficulty": "easy",
+      "timeLimit": 60,
+      "category": "Technology"
+    },
+    {
+      "id": 2,
+      "word": "PUZZLE",
+      "alternateAnswers": ["PUZZEL"],
+      "hint": "A game or problem that tests knowledge or thinking",
+      "difficulty": "medium",
+      "timeLimit": 45,
+      "category": "Games"
+    },
+    {
+      "id": 3,
+      "word": "ANIMATION",
+      "alternateAnswers": ["AMINATION"],
+      "hint": "The technique of making drawings or objects appear to move",
+      "difficulty": "hard",
+      "timeLimit": 30,
+      "category": "Art"
+    },
+    {
+      "id": 4,
+      "word": "JAVASCRIPT",
+      "alternateAnswers": ["JAVASCRIP"],
+      "hint": "A programming language that powers the modern web",
+      "difficulty": "hard",
+      "timeLimit": 40,
+      "category": "Technology"
+    },
+    {
+      "id": 5,
+      "word": "CREATIVE",
+      "alternateAnswers": ["REACTIVE", "RECEIVAT"],
+      "hint": "Having the ability to produce original and unusual ideas",
+      "difficulty": "medium",
+      "timeLimit": 50,
+      "category": "Personality"
+    },
+    {
+      "id": 6,
+      "word": "DEVELOPER",
+      "alternateAnswers": ["DEVELOPRE"],
+      "hint": "A person who writes computer software",
+      "difficulty": "hard",
+      "timeLimit": 35,
+      "category": "Technology"
+    },
+    {
+      "id": 7,
+      "word": "INTERFACE",
+      "alternateAnswers": ["INTERFAC"],
+      "hint": "A point where two systems meet and interact",
+      "difficulty": "medium",
+      "timeLimit": 45,
+      "category": "Technology"
+    },
+    {
+      "id": 8,
+      "word": "SOLUTION",
+      "alternateAnswers": ["SOLUTIO"],
+      "hint": "A means of solving a problem or dealing with a difficult situation",
+      "difficulty": "medium",
+      "timeLimit": 50,
+      "category": "General"
+    },
+    {
+      "id": 9,
+      "word": "CHALLENGE",
+      "alternateAnswers": ["CHALLENG"],
+      "hint": "A task or situation that tests someone's abilities",
+      "difficulty": "hard",
+      "timeLimit": 40,
+      "category": "General"
+    },
+    {
+      "id": 10,
+      "word": "INNOVATION",
+      "alternateAnswers": ["INNOVATIO"],
+      "hint": "A new method, idea, or product",
+      "difficulty": "hard",
+      "timeLimit": 35,
+      "category": "Business"
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+.timer-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 15px 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(102, 126, 234, 0.2);
+}
+
+.timer-display {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 120px;
+}
+
+.time-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #374151;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 2px;
+}
+
+.timer-progress {
+  width: 100%;
+  height: 8px;
+  background: rgba(156, 163, 175, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.timer-bar {
+  height: 100%;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.timer-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.timer-icon {
+  font-size: 1.5rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Low time warning animation */
+.timer-container.warning .time-text {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0.5;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .timer-container {
+    padding: 12px 15px;
+    gap: 10px;
+  }
+  
+  .time-text {
+    font-size: 1.3rem;
+  }
+  
+  .timer-icon {
+    font-size: 1.3rem;
+  }
+  
+  .timer-display {
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .timer-container {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+  
+  .time-text {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+  
+  .timer-icon {
+    font-size: 1.1rem;
+  }
+  
+  .timer-display {
+    min-width: 80px;
+  }
+  
+  .timer-progress {
+    height: 6px;
+  }
+}

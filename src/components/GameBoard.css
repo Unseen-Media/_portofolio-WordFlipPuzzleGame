@@ -1,0 +1,201 @@
+.game-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin: 20px 0;
+}
+
+.tiles-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.tile {
+  width: 80px;
+  height: 80px;
+  perspective: 1000px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.tile:hover:not(.revealed) {
+  transform: scale(1.05);
+}
+
+.tile-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.tile.revealed .tile-inner {
+  transform: rotateY(180deg);
+}
+
+.tile-front,
+.tile-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.tile-front {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  transform: rotateY(0deg);
+}
+
+.tile-back {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.tile-number {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.tile-letter {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.word-display {
+  margin-top: 20px;
+}
+
+.word-placeholder {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.letter-slot {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  border: 2px solid rgba(102, 126, 234, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.revealed-letter {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #059669;
+  text-transform: uppercase;
+  animation: letterReveal 0.5s ease-out;
+}
+
+.hidden-letter {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #9ca3af;
+}
+
+@keyframes letterReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotateY(90deg);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2) rotateY(45deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotateY(0deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tiles-container {
+    gap: 10px;
+  }
+  
+  .tile {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .tile-number {
+    font-size: 1rem;
+  }
+  
+  .tile-letter {
+    font-size: 1.4rem;
+  }
+  
+  .letter-slot {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .revealed-letter,
+  .hidden-letter {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tiles-container {
+    gap: 8px;
+  }
+  
+  .tile {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .tile-number {
+    font-size: 0.9rem;
+  }
+  
+  .tile-letter {
+    font-size: 1.2rem;
+  }
+  
+  .letter-slot {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .revealed-letter,
+  .hidden-letter {
+    font-size: 1rem;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .tile:hover:not(.revealed) {
+    transform: none;
+  }
+  
+  .tile:active:not(.revealed) {
+    transform: scale(0.95);
+  }
+}
