@@ -5,6 +5,7 @@ import Timer from './components/Timer';
 import ScoreBoard from './components/ScoreBoard';
 import GameOverlay from './components/GameOverlay';
 import Leaderboard from './components/Leaderboard';
+import VersionBadge from './components/VersionBadge';
 import MobileKeyboardHandler from './components/MobileKeyboardHandler';
 import './components/MobileKeyboardHandler.css';
 import puzzleData from './data/puzzles.json';
@@ -134,6 +135,7 @@ function App() {
           onClose={() => setShowLeaderboard(false)}
           currentScore={score}
         />
+        <VersionBadge />
       </div>
     );
   }
@@ -157,6 +159,7 @@ function App() {
           onClose={() => setShowLeaderboard(false)}
           currentScore={score}
         />
+        <VersionBadge />
       </div>
     );
   }
@@ -226,6 +229,7 @@ function App() {
             timeLeft={timeLeft}
           />
         )}
+        <VersionBadge />
       </div>
     </MobileKeyboardHandler>
   );
