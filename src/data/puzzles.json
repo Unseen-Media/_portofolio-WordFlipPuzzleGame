@@ -3,7 +3,7 @@
     {
       "id": 1,
       "word": "REACT",
-      "alternateAnswers": ["CRATE", "TRACE", "CATER"],
+      "alternateAnswers": ["CRATE", "TRACE", "CATER", "ACTOR", "CARET"],
       "hint": "A popular JavaScript library for building user interfaces",
       "difficulty": "easy",
       "timeLimit": 60,
@@ -12,7 +12,7 @@
     {
       "id": 2,
       "word": "PUZZLE",
-      "alternateAnswers": ["PUZZEL"],
+      "alternateAnswers": ["PUZZEL", "PUZZLE"],
       "hint": "A game or problem that tests knowledge or thinking",
       "difficulty": "medium",
       "timeLimit": 45,
@@ -21,7 +21,7 @@
     {
       "id": 3,
       "word": "ANIMATION",
-      "alternateAnswers": ["AMINATION"],
+      "alternateAnswers": ["AMINATION", "ANIMATIO", "ANIMATIN"],
       "hint": "The technique of making drawings or objects appear to move",
       "difficulty": "hard",
       "timeLimit": 30,
@@ -30,7 +30,7 @@
     {
       "id": 4,
       "word": "JAVASCRIPT",
-      "alternateAnswers": ["JAVASCRIP"],
+      "alternateAnswers": ["JAVASCRIP", "JAVASCRPT", "JAVASCRIT"],
       "hint": "A programming language that powers the modern web",
       "difficulty": "hard",
       "timeLimit": 40,
@@ -39,7 +39,7 @@
     {
       "id": 5,
       "word": "CREATIVE",
-      "alternateAnswers": ["REACTIVE", "RECEIVAT"],
+      "alternateAnswers": ["REACTIVE", "RECEIVAT", "CREATIV"],
       "hint": "Having the ability to produce original and unusual ideas",
       "difficulty": "medium",
       "timeLimit": 50,
@@ -48,7 +48,7 @@
     {
       "id": 6,
       "word": "DEVELOPER",
-      "alternateAnswers": ["DEVELOPRE"],
+      "alternateAnswers": ["DEVELOPRE", "DEVELOPR", "DEVELOPE"],
       "hint": "A person who writes computer software",
       "difficulty": "hard",
       "timeLimit": 35,
@@ -57,7 +57,7 @@
     {
       "id": 7,
       "word": "INTERFACE",
-      "alternateAnswers": ["INTERFAC"],
+      "alternateAnswers": ["INTERFAC", "INTERFCE", "INTERFAE"],
       "hint": "A point where two systems meet and interact",
       "difficulty": "medium",
       "timeLimit": 45,
@@ -66,7 +66,7 @@
     {
       "id": 8,
       "word": "SOLUTION",
-      "alternateAnswers": ["SOLUTIO"],
+      "alternateAnswers": ["SOLUTIO", "SOLUTIN", "SOLUTON"],
       "hint": "A means of solving a problem or dealing with a difficult situation",
       "difficulty": "medium",
       "timeLimit": 50,
@@ -75,7 +75,7 @@
     {
       "id": 9,
       "word": "CHALLENGE",
-      "alternateAnswers": ["CHALLENG"],
+      "alternateAnswers": ["CHALLENG", "CHALLENGE", "CHALLENGE"],
       "hint": "A task or situation that tests someone's abilities",
       "difficulty": "hard",
       "timeLimit": 40,
@@ -84,7 +84,7 @@
     {
       "id": 10,
       "word": "INNOVATION",
-      "alternateAnswers": ["INNOVATIO"],
+      "alternateAnswers": ["INNOVATIO", "INNOVATIN", "INNOVATON"],
       "hint": "A new method, idea, or product",
       "difficulty": "hard",
       "timeLimit": 35,

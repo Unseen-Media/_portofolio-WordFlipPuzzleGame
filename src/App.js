@@ -4,18 +4,20 @@ import GameBoard from './components/GameBoard';
 import Timer from './components/Timer';
 import ScoreBoard from './components/ScoreBoard';
 import GameOverlay from './components/GameOverlay';
+import Leaderboard from './components/Leaderboard';
 import MobileKeyboardHandler from './components/MobileKeyboardHandler';
 import './components/MobileKeyboardHandler.css';
 import puzzleData from './data/puzzles.json';
 
 function App() {
   const [currentPuzzle, setCurrentPuzzle] = useState(0);
-  const [gameState, setGameState] = useState('menu'); // menu, playing, won, lost
+  const [gameState, setGameState] = useState('menu'); // menu, playing, won, lost, timeout
   const [timeLeft, setTimeLeft] = useState(60);
   const [score, setScore] = useState(0);
   const [revealedTiles, setRevealedTiles] = useState([]);
   const [userAnswer, setUserAnswer] = useState('');
   const [showHint, setShowHint] = useState(false);
+  const [showLeaderboard, setShowLeaderboard] = useState(false);
 
   const puzzle = puzzleData.puzzles[currentPuzzle];
 
@@ -24,7 +26,7 @@ function App() {
       const timer = setInterval(() => {
         setTimeLeft((prev) => {
           if (prev <= 1) {
-            setGameState('lost');
+            setGameState('timeout');
             return 0;
           }
           return prev - 1;
@@ -123,7 +125,15 @@ function App() {
           <div className="score-display">
             <p>Current Score: {score}</p>
           </div>
+          <button className="leaderboard-button" onClick={() => setShowLeaderboard(true)}>
+            🏆 Leaderboard
+          </button>
         </div>
+        <Leaderboard 
+          isVisible={showLeaderboard}
+          onClose={() => setShowLeaderboard(false)}
+          currentScore={score}
+        />
       </div>
     );
   }
@@ -138,7 +148,15 @@ function App() {
           <button className="start-button" onClick={resetGame}>
             Play Again
           </button>
+          <button className="leaderboard-button" onClick={() => setShowLeaderboard(true)}>
+            🏆 View Leaderboard
+          </button>
         </div>
+        <Leaderboard 
+          isVisible={showLeaderboard}
+          onClose={() => setShowLeaderboard(false)}
+          currentScore={score}
+        />
       </div>
     );
   }
@@ -197,7 +215,7 @@ function App() {
           </form>
         </div>
 
-        {(gameState === 'won' || gameState === 'lost') && (
+        {(gameState === 'won' || gameState === 'lost' || gameState === 'timeout') && (
           <GameOverlay
             gameState={gameState}
             correctAnswer={puzzle.word}

@@ -21,6 +21,8 @@ const GameOverlay = ({
   }, [gameState]);
 
   const isWin = gameState === 'won';
+  const isTimeout = gameState === 'timeout';
+  const isWrongAnswer = gameState === 'lost';
   const timeBonus = Math.floor(timeLeft * 10);
 
   return (
@@ -29,11 +31,11 @@ const GameOverlay = ({
         {showConfetti && <Confetti />}
         
         <div className="result-icon">
-          {isWin ? '🎉' : '😔'}
+          {isWin ? '🎉' : (isTimeout ? '⏰' : '❌')}
         </div>
         
         <h2 className="result-title">
-          {isWin ? 'Congratulations!' : 'Time\'s Up!'}
+          {isWin ? 'Congratulations!' : (isTimeout ? 'Time\'s Up!' : 'Wrong Answer!')}
         </h2>
         
         <div className="result-details">
@@ -71,6 +73,16 @@ const GameOverlay = ({
                     ))}
                   </div>
                 </div>
+              )}
+              {isTimeout && (
+                <p className="timeout-message">
+                  ⏰ You ran out of time! Try to be faster next time.
+                </p>
+              )}
+              {isWrongAnswer && (
+                <p className="wrong-answer-message">
+                  ❌ That's not the right answer. Keep trying!
+                </p>
               )}
             </>
           )}

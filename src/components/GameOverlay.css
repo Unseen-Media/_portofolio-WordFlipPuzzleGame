@@ -209,6 +209,26 @@
   }
 }
 
+.timeout-message {
+  background: rgba(251, 191, 36, 0.1);
+  color: #92400e;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 15px;
+  font-weight: 500;
+  border-left: 3px solid #fbbf24;
+}
+
+.wrong-answer-message {
+  background: rgba(239, 68, 68, 0.1);
+  color: #991b1b;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 15px;
+  font-weight: 500;
+  border-left: 3px solid #ef4444;
+}
+
 /* Animations */
 @keyframes fadeIn {
   from {
