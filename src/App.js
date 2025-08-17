@@ -4,6 +4,8 @@ import GameBoard from './components/GameBoard';
 import Timer from './components/Timer';
 import ScoreBoard from './components/ScoreBoard';
 import GameOverlay from './components/GameOverlay';
+import MobileKeyboardHandler from './components/MobileKeyboardHandler';
+import './components/MobileKeyboardHandler.css';
 import puzzleData from './data/puzzles.json';
 
 function App() {
@@ -142,70 +144,72 @@ function App() {
   }
 
   return (
-    <div className="app">
-      <div className="game-header">
-        <Timer timeLeft={timeLeft} totalTime={puzzle.timeLimit} />
-        <ScoreBoard score={score} />
-      </div>
-
-      <div className="game-container">
-        <div className="puzzle-info-bar">
-          <span className="difficulty" style={{ color: getDifficultyColor(puzzle.difficulty) }}>
-            {puzzle.difficulty.toUpperCase()}
-          </span>
-          <span className="category">{puzzle.category}</span>
-          <button 
-            className="hint-button"
-            onClick={() => setShowHint(!showHint)}
-          >
-            💡 Hint
-          </button>
+    <MobileKeyboardHandler>
+      <div className="app">
+        <div className="game-header">
+          <Timer timeLeft={timeLeft} totalTime={puzzle.timeLimit} />
+          <ScoreBoard score={score} />
         </div>
 
-        {showHint && (
-          <div className="hint-container">
-            <p className="hint-text">{puzzle.hint}</p>
+        <div className="game-container">
+          <div className="puzzle-info-bar">
+            <span className="difficulty" style={{ color: getDifficultyColor(puzzle.difficulty) }}>
+              {puzzle.difficulty.toUpperCase()}
+            </span>
+            <span className="category">{puzzle.category}</span>
+            <button 
+              className="hint-button"
+              onClick={() => setShowHint(!showHint)}
+            >
+              💡 Hint
+            </button>
           </div>
-        )}
 
-        <GameBoard
-          word={puzzle.word}
-          revealedTiles={revealedTiles}
-          onTileReveal={handleTileReveal}
-        />
+          {showHint && (
+            <div className="hint-container">
+              <p className="hint-text">{puzzle.hint}</p>
+            </div>
+          )}
 
-        <form className="answer-form" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            value={userAnswer}
-            onChange={(e) => setUserAnswer(e.target.value)}
-            placeholder="Enter your answer..."
-            className="answer-input"
-            disabled={gameState !== 'playing'}
-            autoFocus
+          <GameBoard
+            word={puzzle.word}
+            revealedTiles={revealedTiles}
+            onTileReveal={handleTileReveal}
           />
-          <button 
-            type="submit" 
-            className="submit-button"
-            disabled={gameState !== 'playing' || !userAnswer.trim()}
-          >
-            Submit
-          </button>
-        </form>
-      </div>
 
-      {(gameState === 'won' || gameState === 'lost') && (
-        <GameOverlay
-          gameState={gameState}
-          correctAnswer={puzzle.word}
-          alternateAnswers={puzzle.alternateAnswers}
-          onNext={nextPuzzle}
-          onRestart={resetGame}
-          score={score}
-          timeLeft={timeLeft}
-        />
-      )}
-    </div>
+          <form className="answer-form" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              value={userAnswer}
+              onChange={(e) => setUserAnswer(e.target.value)}
+              placeholder="Enter your answer..."
+              className="answer-input"
+              disabled={gameState !== 'playing'}
+              autoFocus
+            />
+            <button 
+              type="submit" 
+              className="submit-button"
+              disabled={gameState !== 'playing' || !userAnswer.trim()}
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+
+        {(gameState === 'won' || gameState === 'lost') && (
+          <GameOverlay
+            gameState={gameState}
+            correctAnswer={puzzle.word}
+            alternateAnswers={puzzle.alternateAnswers}
+            onNext={nextPuzzle}
+            onRestart={resetGame}
+            score={score}
+            timeLeft={timeLeft}
+          />
+        )}
+      </div>
+    </MobileKeyboardHandler>
   );
 }
 

@@ -278,6 +278,10 @@
 @media (max-width: 768px) {
   .app {
     padding: 10px;
+    min-height: 100vh;
+    /* Prevent viewport issues on mobile */
+    height: 100vh;
+    overflow-y: auto;
   }
   
   .menu-container {
@@ -296,6 +300,8 @@
   
   .game-container {
     padding: 20px;
+    /* Ensure container doesn't get cut off by keyboard */
+    margin-bottom: 20px;
   }
   
   .puzzle-info-bar {
@@ -306,6 +312,14 @@
   
   .answer-form {
     flex-direction: column;
+    /* Keep form visible when keyboard appears */
+    position: sticky;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    margin: 0 -20px -20px -20px;
+    border-top: 1px solid rgba(102, 126, 234, 0.1);
   }
   
   .answer-input,
@@ -325,5 +339,56 @@
   
   .game-container {
     padding: 15px;
+  }
+  
+  .answer-form {
+    margin: 0 -15px -15px -15px;
+    padding: 15px;
+  }
+}
+
+/* Mobile keyboard handling */
+@media (max-height: 600px) {
+  .app {
+    padding: 5px;
+  }
+  
+  .game-container {
+    padding: 10px;
+  }
+  
+  .game-header {
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .tiles-container {
+    gap: 8px;
+  }
+  
+  .tile {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .word-display {
+    margin-top: 10px;
+  }
+  
+  .letter-slot {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .revealed-letter,
+  .hidden-letter {
+    font-size: 0.9rem;
+  }
+}
+
+/* Prevent zoom on input focus */
+@media screen and (max-width: 768px) {
+  .answer-input {
+    font-size: 16px !important;
   }
 }

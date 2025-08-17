@@ -1,0 +1,117 @@
+.mobile-keyboard-handler {
+  transition: all 0.3s ease;
+}
+
+.mobile-keyboard-handler.keyboard-visible {
+  /* Adjust layout when keyboard is visible */
+}
+
+.mobile-keyboard-handler.keyboard-visible .game-container {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.mobile-keyboard-handler.keyboard-visible .game-board {
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.mobile-keyboard-handler.keyboard-visible .tiles-container {
+  gap: 4px;
+}
+
+.mobile-keyboard-handler.keyboard-visible .tile {
+  width: 40px;
+  height: 40px;
+}
+
+.mobile-keyboard-handler.keyboard-visible .tile-number {
+  font-size: 0.7rem;
+}
+
+.mobile-keyboard-handler.keyboard-visible .tile-letter {
+  font-size: 0.9rem;
+}
+
+.mobile-keyboard-handler.keyboard-visible .letter-slot {
+  width: 25px;
+  height: 25px;
+}
+
+.mobile-keyboard-handler.keyboard-visible .revealed-letter,
+.mobile-keyboard-handler.keyboard-visible .hidden-letter {
+  font-size: 0.8rem;
+}
+
+.mobile-keyboard-handler.keyboard-visible .hint-container {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.mobile-keyboard-handler.keyboard-visible .puzzle-info-bar {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+/* Ensure answer form stays visible and accessible */
+.mobile-keyboard-handler.keyboard-visible .answer-form {
+  position: sticky;
+  bottom: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  border-top: 2px solid rgba(102, 126, 234, 0.2);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Compact header when keyboard is visible */
+.mobile-keyboard-handler.keyboard-visible .game-header {
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.mobile-keyboard-handler.keyboard-visible .timer-container,
+.mobile-keyboard-handler.keyboard-visible .score-board {
+  padding: 8px 12px;
+}
+
+.mobile-keyboard-handler.keyboard-visible .time-text {
+  font-size: 1.1rem;
+}
+
+.mobile-keyboard-handler.keyboard-visible .score-value {
+  font-size: 1.3rem;
+}
+
+/* Hide non-essential elements when keyboard is visible */
+.mobile-keyboard-handler.keyboard-visible .hint-button {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+}
+
+/* Ensure smooth transitions */
+.mobile-keyboard-handler * {
+  transition: all 0.3s ease;
+}
+
+/* Extra compact mode for very small screens with keyboard */
+@media (max-height: 500px) {
+  .mobile-keyboard-handler.keyboard-visible .game-container {
+    padding: 5px;
+  }
+  
+  .mobile-keyboard-handler.keyboard-visible .tile {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .mobile-keyboard-handler.keyboard-visible .letter-slot {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .mobile-keyboard-handler.keyboard-visible .revealed-letter,
+  .mobile-keyboard-handler.keyboard-visible .hidden-letter {
+    font-size: 0.7rem;
+  }
+}
